@@ -36,7 +36,7 @@ Books and students maintenance modules are also included in this system which wo
 All these modules are able to help librarian to manage the library with more convenience and in a more efficient way as compared to library systems which are not computerized. </br>
 
 ## Features
-This project aims to achieve the following features:
+This project aims to implement the following features:
 * Easily manage the complete management of the library through the graphical user interface.
 * Removes manual process of issuing books and simplifies the way of issuing book to save time and effort.
 * Can manage genres
