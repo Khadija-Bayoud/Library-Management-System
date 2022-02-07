@@ -257,7 +257,7 @@ void signUp::on_backButton_clicked()
 </p> </br>
 This feature allows users to update their passwords. </br>
 ```newpasswd.cpp```
-``` cpp
+```cpp
 void newPasswd::on_submitButton_clicked()
 {
     //call the mail Database
@@ -426,7 +426,7 @@ void manageBooks::on_deleteButton_clicked()
 
 ## Manage Authors
 <p align="center">
-  <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152712241-b7996645-94a4-4f43-b838-13a5d4892e60.png"/>
+  <img align="center" width="50%" height="50%" src="https://user-images.githubusercontent.com/72691265/152712241-b7996645-94a4-4f43-b838-13a5d4892e60.png"/>
 </p> </br>
 This  feature allows admin to add, edit and delete a authors. </br>
 
@@ -889,9 +889,170 @@ void addBook::on_chooseGenreBtn_clicked()
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152713652-6496ec47-4602-43a8-ab39-4e41560bdd63.png"/>
 </p> </br>
 
-```addBook.cpp```
+```editBook.cpp```
 ```cpp
+void editBook::on_cancelBtn_clicked()
+{
+    this->hide();
+}
 
+void editBook::on_selectImgBtn_clicked()
+{
+    coverFilename = QFileDialog::getOpenFileName();
+    ui->coverLabel->setPixmap(coverFilename);
+    clicked = true;
+}
+
+void editBook::on_editBookBtn_clicked()
+{
+    //get the content of the Line edit
+    QString ISBN = ui->ISBN->text();
+    QString name = ui->name->text();
+    QString author = ui->author->text() ;
+    QString genre = ui->genre->currentText();
+    QString quantity = ui->quantity->text();
+    QString publisher = ui->publisher->text();
+    QString price = ui->price->text();
+    QString date = ui->date->text();
+    QString description = ui->description->toPlainText();
+
+    //test if the fields are not empty
+    QStringList bookInfo {ISBN, name, author, genre, quantity, publisher, price, date};
+    bool full = true;
+    for(int i=0; i<bookInfo.length(); i++)
+    {
+        if(bookInfo[i].isEmpty())
+        {
+            full = false;
+            break;
+        }
+    }
+
+    //call the mail Database
+    digitalLibrary lib;
+    auto db = lib.db;
+
+    if(full)
+    {
+        if(clicked)
+        {
+            QString coverPath = coverFilename;
+            //Define the query
+            auto query = QSqlQuery(db);
+            QString searchISBN = {"UPDATE books SET name = '"+name+"',"
+                                "author = '"+author+"', genre = '"+genre+"',"
+                                "quantity = '"+quantity+"', publisher = '"+publisher+"',"
+                                "price = '"+price+"', date = '"+date+"', description = '"+description+"',"
+                                "cover = '"+coverPath+"' WHERE ISBN = '"+ISBN+"'"};
+            if(!query.exec(searchISBN))
+                qDebug() << "Cannot search ISBN";
+            else
+                QMessageBox::information(this,"SUCCESS", "Book updated successfully");
+        }
+        else
+        {
+            //Define the query
+            auto query = QSqlQuery(db);
+            QString searchISBN = {"UPDATE books SET name = '"+name+"',"
+                                "author = '"+author+"', genre = '"+genre+"',"
+                                "quantity = '"+quantity+"', publisher = '"+publisher+"',"
+                                "price = '"+price+"', date = '"+date+"', description = '"+description+"'"
+                                "WHERE ISBN = '"+ISBN+"'"};
+            if(!query.exec(searchISBN))
+                qDebug() << "Cannot search ISBN";
+            else
+                QMessageBox::information(this,"SUCCESS", "Book updated successfully");
+        }
+    }
+    else
+        QMessageBox::warning(this,"Failed", "Fields are empty");
+}
+
+void editBook::on_searchBtn_clicked()
+{
+    //get the content of the Line edit
+    QString ISBN = ui->ISBN->text();
+    QString name;
+    QString author;
+    QString genre;
+    QString quantity;
+    QString publisher;
+    QString price;
+    QString date;
+    QString description;
+    QString coverPath;
+
+    //call the mail Database
+    digitalLibrary lib;
+    auto db = lib.db;
+
+    if(!ISBN.isEmpty())
+    {
+        //Define the query
+        auto query = QSqlQuery(db);
+        QString searchISBN = {"SELECT * FROM books WHERE ISBN = '%1'"};
+
+        //execute the query
+        if(!query.exec(searchISBN.arg(ISBN)))
+            qDebug() << "Cannot select from books";
+
+        //check if the book is found
+        while(query.next())
+            count++;
+
+        if(count != 1)
+        {
+            QMessageBox::warning(this, "Not Found", "Book not Found");
+            ui->ISBN->clear();
+        }
+        else
+        {
+            //Retrieve the fields identified by ID
+            if(query.first())
+            {
+                name = query.value(2).toString();
+                author = query.value(3).toString();
+                genre = query.value(4).toString();
+                quantity = query.value(5).toString();
+                publisher = query.value(6).toString();
+                price = query.value(7).toString();
+                date = query.value(8).toString();
+                description = query.value(9).toString();
+                coverPath = query.value(10).toString();
+            }
+        }
+
+        //Convert to QDate
+        QStringList dateList = date.split("/");
+        QDate Date;
+        if(dateList.length() == 3)
+            Date = QDate(dateList[2].toInt(), dateList[1].toInt(), dateList[0].toInt());
+
+        //Show the fields in the corresponding line Edit
+        ui->name->setText(name);
+        ui->author->setText(author);
+        ui->genre->setCurrentText(genre);
+        ui->quantity->setValue(quantity.toInt());
+        ui->publisher->setText(publisher);
+        ui->price->setText(price);
+        ui->date->setDate(Date);
+        ui->description->setText(description);
+        if(QFileInfo::exists(coverPath))
+            ui->coverLabel->setPixmap(coverPath);
+        else
+            ui->coverLabel->setText("Book cover not found");
+    }
+    else
+        QMessageBox::warning(this, "ISBN", "Insert ISBN");
+
+}
+
+void editBook::on_changeAuthorBtn_clicked()
+{
+    authorsList authors;
+    authors.exec();
+    ui->author->setText(authors.author);
+}
 ```
 
 
