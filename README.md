@@ -58,7 +58,7 @@ This project aims to implement the following features:
 * Books Management
 * Update the details when the student returns the book
 * Search student by using their student ID
-* View student details </br>
+* View student details</br></br>
 We are using a main database to store all the informations.</br>
 
 ```digitalLibrary.cpp```
@@ -133,7 +133,7 @@ void digitalLibrary::connectDB()
 
 This feature is used by the users to login into system. They are required to enter username and
 password before they are allowed to enter the system .The username and password will be verified
-and if invalid username or password is there user is not allowed to enter the system. </br>
+and if invalid username or password is there user is not allowed to enter the system.</br>
 
 
 ```Login.cpp```
@@ -210,8 +210,8 @@ void Login::on_forgetPasswdBtn_clicked()
 ## Sign Up
 <p align="center">
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152710340-87180d46-a3b1-4de1-b330-40115a3c8acc.png"/>
-</p> </br>
-This feature can be performed by all users to register new user to create account.
+</p></br>
+This feature can be performed by all users to register new user to create account.</br>
 
 ```signup.cpp``` 
 ```cpp
@@ -270,8 +270,8 @@ void signUp::on_backButton_clicked()
 ## New Password
 <p align="center">
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152710893-0bf76eea-1cc9-4133-a244-83435f458cc7.png"/>
-</p> </br>
-This feature allows users to update their passwords. </br>
+</p></br>
+This feature allows users to update their passwords.</br>
 
 ```newpasswd.cpp```
 ```cpp
@@ -330,7 +330,7 @@ void newPasswd::on_backButton_clicked()
 ## Manage Genres
 <p align="center">
   <img align="center" width="60%" height="60%" src="https://user-images.githubusercontent.com/72691265/152711598-e42f9220-ce50-46a9-a705-b72cd3b34cb4.png"/>
-</p> </br>
+</p></br>
 In order not to limit the genres books at the level of choosing the book's category, this feature allows librarians to manage available genres (adding, editing, deleting).</br>
 
 ```manageGenres.cpp```
@@ -445,8 +445,8 @@ void manageBooks::on_deleteButton_clicked()
 ## Manage Authors
 <p align="center">
   <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152712241-b7996645-94a4-4f43-b838-13a5d4892e60.png"/>
-</p> </br>
-This  feature allows admin to add, edit and delete a authors. </br>
+</p></br>
+This feature allows admin to add, edit and delete a authors.</br>
 
 ```manageAuthors.cpp```
 ```cpp
@@ -566,7 +566,7 @@ void ManageAuthors::on_deleteButton_clicked()
 ### Add Member
 <p align="center">
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152712674-292e868f-ba84-476b-93f5-ce1fccc81091.png"/>
-</p> </br>
+</p></br>
 
 ```addMember.cpp```
 ```cpp
@@ -608,7 +608,7 @@ void addMember::on_addMemberButton_clicked()
 ### Edit Member
 <p align="center">
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152712854-2cc2ad04-73b1-4131-bfb8-01e98c898a89.png"/>
-</p> </br>
+</p></br>
 
 ```editMember.cpp```
 ```cpp
@@ -704,7 +704,7 @@ void editMember::on_editMemberBtn_clicked()
 ### Delete Member
 <p align="center">
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152713041-ba11aca6-39d2-494e-87cf-d89f3ac41520.png"/>
-</p> </br>
+</p></br>
 
 ```deleteMember.cpp```
 ```cpp
@@ -754,7 +754,7 @@ void deleteMember::on_deleteMemberBtn_clicked()
 ### Members List
 <p align="center">
   <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152713200-cb750d6c-0a6c-4ca2-8717-fa2ff5bb4e94.png"/>
-</p> </br>
+</p></br>
 
 ```membersList.cpp```
 ```cpp
@@ -809,7 +809,7 @@ void membersList::on_value_textEdited(const QString &text)
 ### Add Book
 <p align="center">
   <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152713397-751335f0-367e-448f-a4c8-d87480646540.png"/>
-</p> </br>
+</p></br>
 
 ```addBook.cpp```
 ```cpp
@@ -905,7 +905,7 @@ void addBook::on_chooseGenreBtn_clicked()
 ### Edit Book
 <p align="center">
   <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152713652-6496ec47-4602-43a8-ab39-4e41560bdd63.png"/>
-</p> </br>
+</p></br>
 
 ```editBook.cpp```
 ```cpp
@@ -1075,7 +1075,7 @@ void editBook::on_changeAuthorBtn_clicked()
 ### Delete Book
 <p align="center">
   <img align="center" width="40%" height="40%" src="https://user-images.githubusercontent.com/72691265/152714145-31f176f9-ba5c-4506-a709-c551992d16c2.png"/>
-</p> </br>
+</p></br>
 
 ```deleteBook.cpp```
 ```cpp
@@ -1126,7 +1126,7 @@ void deleteBook::on_deleteBookBtn_clicked()
 ### Books List
 <p align="center">
   <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152714379-85165e82-9610-4ed9-a7f7-136321d4ae4b.png"/>
-</p> </br>
+</p></br>
 
 ```booksList.cpp```
 ```cpp
@@ -1210,7 +1210,7 @@ void bookList::showInfo()
 ### SelectAuthor
 <p align="center">
   <img align="center" width="60%" height="60%" src="https://user-images.githubusercontent.com/72691265/152714723-596b45ec-0aaa-4389-a3d1-a127d4255ec5.png"/>
-</p> </br>
+</p></br>
 
 ```authorsList.cpp```
 ```cpp
@@ -1278,7 +1278,7 @@ void authorsList::on_value_textEdited(const QString &arg1)
 ### SelectGenre
 <p align="center">
   <img align="center" width="60%" height="60%" src="https://user-images.githubusercontent.com/72691265/152715491-5a1cf481-eb21-4e51-bb39-34bb42909bf6.png"/>
-</p> </br>
+</p></br>
 
 ```genresList.cpp```
 ```cpp
@@ -1346,7 +1346,7 @@ Book transaction feature is a main feature in Library Management System. When me
 ### Issue Book
 <p align="center">
   <img align="center" width="60%" height="60%" src="https://user-images.githubusercontent.com/72691265/152715535-5b310ee5-26c4-4a85-af4f-91cd044f39f4.png"/>
-</p> </br>
+</p></br>
 
 ```issueBook.cpp```
 ```cpp
@@ -1475,7 +1475,7 @@ void IssueBook::on_cancel_clicked()
 ### Return Book
 <p align="center">
   <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152715812-eff16c0e-9391-48bc-af3a-25b9207e307c.png"/>
-</p> </br>
+</p></br>
 
 ```issueBook.cpp```
 ```cpp
