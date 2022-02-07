@@ -6,6 +6,7 @@
 
 ## Table of content 
   * [Introduction](#introduction)
+  * [Tools](#tools)
   * [Features](#features)
      * [Authorization and Authentication](#authorization-and-authentication)
         * [Login](#login) 
@@ -28,12 +29,24 @@
         * [Return Member](#return-book)
   * [Video](#video)
   * [Conclusion](#conclusion)
+    * [Future enhacements](#future-enhacement)
 
 
 ## Introduction
 Library Management system is an application that refers to library systems which are generally small or medium in size. It is used by librarian to manage the library using a computerized system where he/she can record various transactions like issue of books, return of books, addition of new books, addition of new students etc.
 Books and students maintenance modules are also included in this system which would keep track of the students using the library and also a detailed description about the books a library contains. With this computerized system there will be no loss of book record or member record which generally happens when a non-computerized system is used.
 All these modules are able to help librarian to manage the library with more convenience and in a more efficient way as compared to library systems which are not computerized. </br>
+
+## Tools
+This project required the following tools:
+* [Qt Creator](https://www.qt.io/download) version 5.12
+  * Qt designer
+* Qt ressource classes 
+  * [QSqlDatabase](https://doc.qt.io/qt-5/qsqldatabase.html)
+  * [QSqlQuery](https://doc.qt.io/qt-5/qsqlquery.html)
+  * [QSqlQueryModel](https://doc.qt.io/qt-5/qsqlquerymodel.html#details)
+  * [QTableView](https://doc.qt.io/qt-5/qtableview.html)
+* CSS  for stylesheet 
 
 ## Features
 This project aims to implement the following features:
@@ -46,6 +59,7 @@ This project aims to implement the following features:
 * Search student by using their student ID
 * View student details </br>
 We are using a main database to store all the informations.</br>
+
 ```digitalLibrary.cpp```
 ```cpp
 void digitalLibrary::connectDB()
@@ -1661,6 +1675,14 @@ https://user-images.githubusercontent.com/74473164/152719709-86fcbc21-20e1-4d12-
 Here, we have come to the end of the project Library Management system. It was a great opportunity for us to develop our skills in designing GUI and developing its backends using variety of tools that are provided by Qt Library. We tried our best to include all the necessary points that are required related to the given project. We do hope that our project will be interesting and may be even knowledgeable.
 For us  no single  project should be considered as a complete  project  forever because our mind is always thinking somthing new  and the requirement
 of users, should be change over the time .We always want something more than what we have.
+
+### Future Enhacements
+* Allow management of multiple admin accounts on the same database using advanced database table with foreign Keys.
+* Manage the number of issuance a member can make.
+* Mutli-services platform
+   * Allow members to access their accounts.
+   * Allow authors to access their accounts.
+* Combine editing books and editing members to provide more features.
 
 
 
