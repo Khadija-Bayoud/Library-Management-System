@@ -1658,14 +1658,10 @@ https://user-images.githubusercontent.com/74473164/152719709-86fcbc21-20e1-4d12-
 
 
 ## Conclusion
-To sum up, this project was a great opportunity for us to develop our skills in designing GUI and developing its backends using variety of tools that are provided by Qt Library.
+Here, we have come to the end of the project Library Management system. It was a great opportunity for us to develop our skills in designing GUI and developing its backends using variety of tools that are provided by Qt Library. We tried our best to include all the necessary points that are required related to the given project. We do hope that our project will be interesting and may be even knowledgeable.
+For us  no single  project should be considered as a complete  project  forever because our mind is always thinking somthing new  and the requirement
+of users, should be change over the time .We always want something more than what we have.
 
-for us  no single  project should be considered as a complete  project  forever because our mind is always thinking somthing new  and the requirement
- of usersshould be change over the time .We always  want something more than what we have 
- ### Future Enhacements
- * We can provides SMS service (notifications)  to users of this application 
- * Bsed on the future  security issues,security can be improved  using emerging  technologies 
- * As  the technology emerges, it is possible  to upgrade  the system  and can  be adabtable to desired environment 
 
 
 
