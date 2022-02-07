@@ -1458,7 +1458,7 @@ void IssueBook::on_cancel_clicked()
 
 ### Return Book
 <p align="center">
-  <img align="center" width="60%" height="60%" src="https://user-images.githubusercontent.com/72691265/152715812-eff16c0e-9391-48bc-af3a-25b9207e307c.png"/>
+  <img align="center" width="70%" height="70%" src="https://user-images.githubusercontent.com/72691265/152715812-eff16c0e-9391-48bc-af3a-25b9207e307c.png"/>
 </p> </br>
 
 ```issueBook.cpp```
