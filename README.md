@@ -47,6 +47,7 @@ This project required the following tools:
   * [QSqlQueryModel](https://doc.qt.io/qt-5/qsqlquerymodel.html#details)
   * [QTableView](https://doc.qt.io/qt-5/qtableview.html)
 * CSS  for stylesheet 
+* [DB browser (SQlite)](https://sqlitebrowser.org)
 
 ## Features
 This project aims to implement the following features:
