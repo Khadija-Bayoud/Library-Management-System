@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>logo.png</file>
+        <file>book.png</file>
+        <file>book1.png</file>
+        <file>book2.png</file>
+        <file>book3.png</file>
+        <file>login-book.png</file>
+        <file>loadingBook.gif</file>
+    </qresource>
+</RCC>
